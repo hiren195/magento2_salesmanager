@@ -1,0 +1,32 @@
+<?php $collection = $block->loadManager(); ?>
+<div class="block block-accountmanager">
+    <div class="block-title">
+        <strong role="heading" aria-level="2"><?= $block->escapeHtml('My Account Manager') ?></strong>
+    </div>
+    <div class="block-content">
+        <div class="block-container">
+            <div class="left">
+                <?php if ($collection !== null):
+                    $imagePath = $block->resize($collection->getImage(), 70, 70);
+                    ?>
+                    <img src="<?= $block->escapeHtmlAttr($imagePath); ?>" />
+                <?php else:
+                    $imagePath = $block->getViewFileUrl('Highlite_MyAccountManager::images/highlite-chris.png');
+                    ?>
+                    <img width="70" height="70" src="<?= $block->escapeHtmlAttr($imagePath); ?>" />
+                <?php endif; ?>
+            </div>
+            <div class="right">
+                <?php if ($collection !== null): ?>
+                    <p><?= $block->escapeHtmlAttr($collection->getManagerName()); ?></p>
+                    <p><?= $block->escapeHtmlAttr($collection->getManagerNumber()); ?></p>
+                    <p><?= $block->escapeHtmlAttr($collection->getManagerEmail()); ?></p>
+                <?php else: ?>
+                    <p><?= $block->escapeHtmlAttr($block->getManagerName()); ?></p>
+                    <p><?= $block->escapeHtmlAttr($block->getManagerNumber()); ?></p>
+                    <p><?= $block->escapeHtmlAttr($block->getManagerEmail()); ?></p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>

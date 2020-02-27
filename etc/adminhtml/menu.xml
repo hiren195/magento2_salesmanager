@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Highlite_MyAccountManager Menu
+ *
+ * @package     Highlite_MyAccountManager
+ *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<add id="Highlite_MyAccountManager::add_index_row" title="Highlite" module="Highlite_MyAccountManager" sortOrder="10" resource="Highlite_MyAccountManager::manager"/>
+        <add id="Highlite_MyAccountManager::grid_index_row" title="Account Manager" module="Highlite_MyAccountManager" sortOrder="200" parent="Highlite_MyAccountManager::add_index_row" action="myaccountmanager/index/grid" resource="Highlite_MyAccountManager::manager"/>
+    </menu>
+</config>
